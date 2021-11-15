@@ -1,5 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import {Button, Text, TextInput, TouchableOpacity} from 'react-native';
+import {
+  Button,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 
 // import './SearchBar.css';
@@ -17,16 +23,24 @@ const Index = ({onSearchClicked}) => {
   return (
     <div className="search-conatiner">
       <Button title="Search" onPress={() => handleOptionPicked(value)} />
-      <div className="input-search">
-        <TextInput
-          placeholder="Enter city name"
-          className="input"
-          value={value}
-          onChange={newVal => handleValueChanged(newVal)}
-        />
-      </div>
+
+      <TextInput
+        style={styles.input}
+        onChangeText={newVal => handleValueChanged(newVal)}
+        value={value}
+        placeholder="Enter id"
+        keyboardType="numeric"
+      />
     </div>
   );
 };
 
 export default Index;
+const styles = StyleSheet.create({
+  input: {
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
+  },
+});
