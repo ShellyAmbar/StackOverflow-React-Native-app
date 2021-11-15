@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Button, Text, TouchableOpacity} from 'react-native';
+import {Button, Text, TextInput, TouchableOpacity} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 
 // import './SearchBar.css';
@@ -18,7 +18,7 @@ const Index = ({onSearchClicked}) => {
     <div className="search-conatiner">
       <Button title="Search" onPress={() => handleOptionPicked(value)} />
       <div className="input-search">
-        <input
+        <TextInput
           placeholder="Enter city name"
           className="input"
           value={value}

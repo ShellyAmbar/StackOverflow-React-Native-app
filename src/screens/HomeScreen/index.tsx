@@ -29,6 +29,7 @@ const Index = () => {
   const [showModal, setshowModal] = useState(false);
   const [selectedItem, setselectedItem] = useState(null);
   const dispatch = useDispatch();
+  const {profile} = useSelector(state => state.profiles);
 
   const showItemData = (item: any) => {
     setselectedItem(item);
@@ -71,6 +72,7 @@ const Index = () => {
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
           <SearchBar onSearchClicked={onPickProfile} />
+          <View>{profile.account_id}</View>
           <CustomFlatList
             data={posts}
             numColumns={1}
